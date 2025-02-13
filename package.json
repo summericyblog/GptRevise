@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/summericyblog/GptRevise"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "Summericy",
   "engines": {
     "vscode": "^1.97.0"
