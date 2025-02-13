@@ -1,0 +1,89 @@
+{
+  "name": "gptrevise",
+  "displayName": "GptRevise",
+  "description": "A VS Code extension to compare text snippets with the GPT revised version.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/summericyblog/GptRevise"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:gptrevise.openSettings"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gptrevise.revise",
+        "title": "GptRevise: Revise Text"
+      },
+      {
+        "command": "gptrevise.grammar",
+        "title": "GptRevise: Grammar Check"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "gptrevise.revise",
+        "key": "ctrl+j",
+        "mac": "cmd+j",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "gptrevise.grammar",
+        "key": "ctrl+shift+j",
+        "mac": "cmd+shift+j",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "gptrevise.apiUrl": {
+          "type": "string",
+          "default": "https://api.openai.com/v1",
+          "description": "The API URL for GPT services."
+        },
+        "gptrevise.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your API key for GPT services."
+        },
+        "gptrevise.model": {
+          "type": "string",
+          "default": "text-davinci-003",
+          "description": "The GPT model to use."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.97.0",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "openai": "^4.83.0"
+  }
+}
