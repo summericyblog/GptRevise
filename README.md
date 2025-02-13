@@ -2,6 +2,10 @@
 
 A Visual Studio Code extension that helps you generate a comparison between the original text and the GPT-revised text.
 
+## Example
+
+![Example](example.gif)
+
 ## Features
 
 - Revise your text using GPT for better readability, clarity, or style.
@@ -33,6 +37,8 @@ This addon has default prompt for revising and grammar check. If you prefer pers
 - `grammar.prompt`: Define your custom prompt for performing a grammar check.
 
 These prompts will guide the GPT model in processing the text according to your specific requirements.
+
+Besides, this addon will create a `.compare` folder and two files in it in your project for comparison.
 
 ## Contributing
 
